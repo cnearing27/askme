@@ -1,6 +1,6 @@
 body {
   color: #03071E;
-  font-family: 'Trebuchet MS', sans-serif;
+  font-family: "Trebuchet MS", sans-serif;
 }
 
 a,
@@ -18,7 +18,7 @@ button {
 }
 
 .title-sm {
-  font-size: 125;
+  font-size: 125%;
 }
 
 .text-sm {
