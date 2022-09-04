@@ -1809,3 +1809,227 @@ Processing by QuestionsController#index as HTML
 Completed 200 OK in 153ms (Views: 147.3ms | ActiveRecord: 1.6ms | Allocations: 18372)
 
 
+Started GET "/session/new" for ::1 at 2022-09-04 18:51:45 +0300
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 60.0ms | Allocations: 4106)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 1895.2ms | Allocations: 185618)
+Completed 200 OK in 1952ms (Views: 1916.6ms | ActiveRecord: 3.3ms | Allocations: 191711)
+
+
+Started DELETE "/session" for ::1 at 2022-09-04 19:05:01 +0300
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://localhost:1080/
+Completed 302 Found in 5ms (Allocations: 673)
+
+
+Started GET "/" for ::1 at 2022-09-04 19:05:01 +0300
+Processing by QuestionsController#index as TURBO_STREAM
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/questions_controller.rb:27:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/index.html.erb within layouts/application
+  Rendered questions/_form.html.erb (Duration: 14.0ms | Allocations: 1578)
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:13
+  [1m[36mCACHE Question Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:14
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:18
+  Rendered questions/_question.html.erb (Duration: 4.0ms | Allocations: 1221)
+  Rendered questions/index.html.erb within layouts/application (Duration: 51.0ms | Allocations: 5925)
+  Rendered layout layouts/application.html.erb (Duration: 227.0ms | Allocations: 46791)
+Completed 200 OK in 330ms (Views: 253.7ms | ActiveRecord: 4.0ms | Allocations: 53760)
+
+
+Started GET "/users/new" for ::1 at 2022-09-04 19:05:03 +0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1568)
+  Rendered layout layouts/application.html.erb (Duration: 61.5ms | Allocations: 16482)
+Completed 200 OK in 80ms (Views: 66.3ms | ActiveRecord: 0.0ms | Allocations: 19755)
+
+
+Started POST "/users" for ::1 at 2022-09-04 19:05:08 +0300
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"a", "nickname"=>"a", "email"=>"a", "password"=>"[FILTERED]"}, "commit"=>"Зарегистрироваться"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Create (10.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "nickname", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "a"], ["nickname", "a"], ["email", "a"], ["created_at", "2022-09-04 16:05:08.583408"], ["updated_at", "2022-09-04 16:05:08.583408"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (18.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+Redirected to http://localhost:1080/
+Completed 302 Found in 642ms (ActiveRecord: 29.1ms | Allocations: 3656)
+
+
+Started GET "/" for ::1 at 2022-09-04 19:05:08 +0300
+Processing by QuestionsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering questions/index.html.erb within layouts/application
+  Rendered questions/_form.html.erb (Duration: 2.1ms | Allocations: 636)
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:13
+  [1m[36mCACHE Question Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:14
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:18
+  Rendered questions/_question.html.erb (Duration: 1.7ms | Allocations: 441)
+  Rendered questions/index.html.erb within layouts/application (Duration: 19.2ms | Allocations: 2890)
+  Rendered layout layouts/application.html.erb (Duration: 93.1ms | Allocations: 17592)
+Completed 200 OK in 140ms (Views: 133.3ms | ActiveRecord: 1.0ms | Allocations: 17914)
+
+
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (6.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (16.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users/new" for ::1 at 2022-09-04 19:08:31 +0300
+Processing by UsersController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:4:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 922)
+  Rendered layout layouts/application.html.erb (Duration: 158.5ms | Allocations: 41815)
+Completed 200 OK in 187ms (Views: 161.3ms | ActiveRecord: 2.6ms | Allocations: 46272)
+
+
+Started POST "/users" for ::1 at 2022-09-04 19:08:36 +0300
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"s", "nickname"=>"s", "email"=>"s", "password"=>"[FILTERED]"}, "commit"=>"Зарегистрироваться"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (6.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "nickname", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "s"], ["nickname", "s"], ["email", "s"], ["created_at", "2022-09-04 16:08:37.120965"], ["updated_at", "2022-09-04 16:08:37.120965"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Completed 500 Internal Server Error in 563ms (ActiveRecord: 19.4ms | Allocations: 3838)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+    session[:user_id] = @user.id
+                             ^^^):
+  
+app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (7.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (10.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users/new" for ::1 at 2022-09-04 19:08:56 +0300
+Processing by UsersController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:4:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 923)
+  Rendered layout layouts/application.html.erb (Duration: 170.8ms | Allocations: 41833)
+Completed 200 OK in 202ms (Views: 174.4ms | ActiveRecord: 2.8ms | Allocations: 46351)
+
+
+Started POST "/users" for ::1 at 2022-09-04 19:09:01 +0300
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"s", "nickname"=>"s", "email"=>"s", "password"=>"[FILTERED]"}, "commit"=>"Зарегистрироваться"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (7.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "nickname", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "s"], ["nickname", "s"], ["email", "s"], ["created_at", "2022-09-04 16:09:01.842099"], ["updated_at", "2022-09-04 16:09:01.842099"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Redirected to http://localhost:1080/
+Completed 302 Found in 556ms (ActiveRecord: 19.9ms | Allocations: 2723)
+
+
+Started GET "/" for ::1 at 2022-09-04 19:09:01 +0300
+Processing by QuestionsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering questions/index.html.erb within layouts/application
+  Rendered questions/_form.html.erb (Duration: 3.1ms | Allocations: 880)
+  [1m[36mQuestion Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:13
+  [1m[36mCACHE Question Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:14
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:18
+  Rendered questions/_question.html.erb (Duration: 2.8ms | Allocations: 499)
+  Rendered questions/index.html.erb within layouts/application (Duration: 19.8ms | Allocations: 3462)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 83.7ms | Allocations: 19842)
+Completed 200 OK in 104ms (Views: 85.4ms | ActiveRecord: 3.9ms | Allocations: 22905)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (6.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  [1m[36mTRANSACTION (19.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2022-09-04 19:09:18 +0300
+Processing by QuestionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering questions/index.html.erb within layouts/application
+  Rendered questions/_form.html.erb (Duration: 1.3ms | Allocations: 621)
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:13
+  [1m[36mCACHE Question Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:14
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:18
+  Rendered questions/_question.html.erb (Duration: 1.0ms | Allocations: 423)
+  Rendered questions/index.html.erb within layouts/application (Duration: 13.1ms | Allocations: 2804)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 69.8ms | Allocations: 18005)
+Completed 200 OK in 74ms (Views: 70.4ms | ActiveRecord: 1.2ms | Allocations: 18324)
+
+
+Started GET "/session/new" for ::1 at 2022-09-04 19:09:20 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 774)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 73.4ms | Allocations: 16274)
+Completed 200 OK in 81ms (Views: 76.5ms | ActiveRecord: 0.5ms | Allocations: 17226)
+
+
+Started POST "/session" for ::1 at 2022-09-04 19:09:25 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"katerina4227@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Войти"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "katerina4227@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:1080/
+Completed 302 Found in 510ms (ActiveRecord: 0.6ms | Allocations: 1175)
+
+
+Started GET "/" for ::1 at 2022-09-04 19:09:26 +0300
+Processing by QuestionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering questions/index.html.erb within layouts/application
+  Rendered questions/_form.html.erb (Duration: 2.4ms | Allocations: 673)
+  [1m[36mQuestion Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:13
+  [1m[36mCACHE Question Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:14
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:18
+  Rendered questions/_question.html.erb (Duration: 1.7ms | Allocations: 461)
+  Rendered questions/index.html.erb within layouts/application (Duration: 17.9ms | Allocations: 2917)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 82.8ms | Allocations: 18203)
+Completed 200 OK in 91ms (Views: 85.7ms | ActiveRecord: 1.6ms | Allocations: 18518)
+
+
