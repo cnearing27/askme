@@ -29,6 +29,10 @@ button {
   color: #a0a0a0;
 }
 
+.text-bold {
+  font-weight: bold;
+}
+
 .hidden-q {
   opacity: 50%;
 }
