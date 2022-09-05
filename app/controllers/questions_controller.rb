@@ -2,15 +2,25 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: %i[update show destroy edit hide]
 
   def create
-    question = Question.create(question_params)
+    @question = Question.new(question_params)
 
-    redirect_to question_path(question), notice: "Новый вопрос создан"
+    if @question.save
+      redirect_to question_path(@question), notice: "Новый вопрос создан"
+    else
+      flash.now[:alert] = "Текст вопроса слишком длинный"
+
+      render :new
+    end
   end
 
   def update
-    @question.update(question_params)
+    if @question.update(question_params)
+      redirect_to question_path(@question), notice: "Вопрос обновлен"
+    else
+      flash.now[:alert] = "Текст вопроса слишком длинный"
 
-    redirect_to question_path(@question), notice: "Вопрос обновлен"
+      render :edit
+    end
   end
 
   def destroy

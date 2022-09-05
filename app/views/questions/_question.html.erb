@@ -1,3 +1,11 @@
+<% if question.errors.any? %>
+  <div class="mt">
+    <% question.errors.full_messages.each do |message| %>
+      <p class="mb-sm text-red"><%= message %></p>
+    <% end %>
+  </div>
+<% end %>
+
 <div class="mb-sm">
   <%= question.body %>
   <p>user_id: <b><%= question.user_id %></b></p>
