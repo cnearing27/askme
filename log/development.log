@@ -6822,3 +6822,131 @@ Processing by UsersController#create as HTML
 Completed 200 OK in 526ms (Views: 172.3ms | ActiveRecord: 2.6ms | Allocations: 50193)
 
 
+Started GET "/" for ::1 at 2022-09-05 03:30:23 +0300
+  [1m[35m (12.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by QuestionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering questions/index.html.erb within layouts/application
+  Rendered questions/_form.html.erb (Duration: 127.8ms | Allocations: 5570)
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:13
+  [1m[36mCACHE Question Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:14
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:18
+  Rendered questions/_question.html.erb (Duration: 5.2ms | Allocations: 1396)
+  Rendered questions/_question.html.erb (Duration: 1.4ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 1.1ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 1.0ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 1.2ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 1.3ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 1.5ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 1.0ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 1.1ms | Allocations: 428)
+  Rendered questions/_question.html.erb (Duration: 1.1ms | Allocations: 428)
+  Rendered questions/_question.html.erb (Duration: 1.4ms | Allocations: 429)
+  Rendered questions/_question.html.erb (Duration: 1.1ms | Allocations: 429)
+  Rendered questions/_question.html.erb (Duration: 1.0ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 1.1ms | Allocations: 428)
+  Rendered questions/_question.html.erb (Duration: 1.4ms | Allocations: 429)
+  Rendered questions/_question.html.erb (Duration: 1.4ms | Allocations: 428)
+  Rendered questions/_question.html.erb (Duration: 1.0ms | Allocations: 428)
+  Rendered questions/_question.html.erb (Duration: 1.1ms | Allocations: 428)
+  Rendered questions/index.html.erb within layouts/application (Duration: 206.6ms | Allocations: 19292)
+  Rendered layout layouts/application.html.erb (Duration: 2198.7ms | Allocations: 310697)
+Completed 200 OK in 2408ms (Views: 2238.4ms | ActiveRecord: 2.5ms | Allocations: 326287)
+
+
+Started GET "/session/new" for ::1 at 2022-09-05 03:30:30 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 16.2ms | Allocations: 1476)
+  Rendered layout layouts/application.html.erb (Duration: 48.1ms | Allocations: 15733)
+Completed 200 OK in 56ms (Views: 51.1ms | ActiveRecord: 0.0ms | Allocations: 16887)
+
+
+Started POST "/session" for ::1 at 2022-09-05 03:30:37 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"katerina4227@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Войти"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "katerina4227@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:1080/
+Completed 302 Found in 324ms (ActiveRecord: 2.1ms | Allocations: 9474)
+
+
+Started GET "/" for ::1 at 2022-09-05 03:30:37 +0300
+Processing by QuestionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering questions/index.html.erb within layouts/application
+  Rendered questions/_form.html.erb (Duration: 1.3ms | Allocations: 779)
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:13
+  [1m[36mCACHE Question Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:14
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:18
+  Rendered questions/_question.html.erb (Duration: 0.9ms | Allocations: 468)
+  Rendered questions/_question.html.erb (Duration: 0.9ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 0.9ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 0.9ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 0.9ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 0.9ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 0.9ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 1.9ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 1.0ms | Allocations: 428)
+  Rendered questions/_question.html.erb (Duration: 0.8ms | Allocations: 428)
+  Rendered questions/_question.html.erb (Duration: 1.0ms | Allocations: 429)
+  Rendered questions/_question.html.erb (Duration: 0.9ms | Allocations: 429)
+  Rendered questions/_question.html.erb (Duration: 1.0ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 0.9ms | Allocations: 428)
+  Rendered questions/_question.html.erb (Duration: 0.9ms | Allocations: 429)
+  Rendered questions/_question.html.erb (Duration: 0.8ms | Allocations: 428)
+  Rendered questions/_question.html.erb (Duration: 0.8ms | Allocations: 428)
+  Rendered questions/_question.html.erb (Duration: 1.4ms | Allocations: 428)
+  Rendered questions/index.html.erb within layouts/application (Duration: 40.5ms | Allocations: 11730)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 115.0ms | Allocations: 27199)
+Completed 200 OK in 121ms (Views: 117.3ms | ActiveRecord: 1.3ms | Allocations: 27549)
+
+
+Started GET "/" for ::1 at 2022-09-05 03:32:23 +0300
+Processing by QuestionsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/questions_controller.rb:37:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/index.html.erb within layouts/application
+  Rendered questions/_form.html.erb (Duration: 5.3ms | Allocations: 1263)
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:13
+  [1m[36mCACHE Question Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:14
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/views/questions/index.html.erb:18
+  Rendered questions/_question.html.erb (Duration: 4.6ms | Allocations: 1138)
+  Rendered questions/_question.html.erb (Duration: 4.9ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 1.7ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 1.2ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 0.9ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 4.3ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 1.6ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 1.9ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 1.1ms | Allocations: 428)
+  Rendered questions/_question.html.erb (Duration: 1.1ms | Allocations: 428)
+  Rendered questions/_question.html.erb (Duration: 0.9ms | Allocations: 429)
+  Rendered questions/_question.html.erb (Duration: 2.6ms | Allocations: 429)
+  Rendered questions/_question.html.erb (Duration: 1.0ms | Allocations: 427)
+  Rendered questions/_question.html.erb (Duration: 18.5ms | Allocations: 428)
+  Rendered questions/_question.html.erb (Duration: 1.1ms | Allocations: 429)
+  Rendered questions/_question.html.erb (Duration: 1.0ms | Allocations: 428)
+  Rendered questions/_question.html.erb (Duration: 1.0ms | Allocations: 428)
+  Rendered questions/_question.html.erb (Duration: 1.1ms | Allocations: 428)
+  Rendered questions/index.html.erb within layouts/application (Duration: 196.7ms | Allocations: 13821)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 361.7ms | Allocations: 59014)
+Completed 200 OK in 390ms (Views: 364.1ms | ActiveRecord: 5.9ms | Allocations: 63478)
+
+
