@@ -1,0 +1,100 @@
+2022-09-06T12:43:41.086137+00:00 app[web.1]: I, [2022-09-06T12:43:41.086057 #4]  INFO -- : [e83993c6-179b-4736-bb4b-19271cf0fc75]   Rendered questions/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 838)
+2022-09-06T12:43:41.088307+00:00 app[web.1]: I, [2022-09-06T12:43:41.088233 #4]  INFO -- : [e83993c6-179b-4736-bb4b-19271cf0fc75]   Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 1842)
+2022-09-06T12:43:41.088470+00:00 app[web.1]: I, [2022-09-06T12:43:41.088434 #4]  INFO -- : [e83993c6-179b-4736-bb4b-19271cf0fc75] Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.6ms | Allocations: 2041)
+2022-09-06T12:43:41.089524+00:00 app[web.1]: F, [2022-09-06T12:43:41.089478 #4] FATAL -- : [e83993c6-179b-4736-bb4b-19271cf0fc75]
+2022-09-06T12:43:41.089525+00:00 app[web.1]: [e83993c6-179b-4736-bb4b-19271cf0fc75] ActionView::Template::Error (undefined method `header_color' for nil:NilClass):
+2022-09-06T12:43:41.089525+00:00 app[web.1]: [e83993c6-179b-4736-bb4b-19271cf0fc75]     10:     <%= javascript_importmap_tags %>
+2022-09-06T12:43:41.089526+00:00 app[web.1]: [e83993c6-179b-4736-bb4b-19271cf0fc75]     11:
+2022-09-06T12:43:41.089527+00:00 app[web.1]: [e83993c6-179b-4736-bb4b-19271cf0fc75]     12:     <style>
+2022-09-06T12:43:41.089527+00:00 app[web.1]: [e83993c6-179b-4736-bb4b-19271cf0fc75]     13:       .navbar { background-color: <%= current_user.header_color %>; }
+2022-09-06T12:43:41.089528+00:00 app[web.1]: [e83993c6-179b-4736-bb4b-19271cf0fc75]     14:     </style>
+2022-09-06T12:43:41.089528+00:00 app[web.1]: [e83993c6-179b-4736-bb4b-19271cf0fc75]     15:   </head>
+2022-09-06T12:43:41.089528+00:00 app[web.1]: [e83993c6-179b-4736-bb4b-19271cf0fc75]     16:
+2022-09-06T12:43:41.089529+00:00 app[web.1]: [e83993c6-179b-4736-bb4b-19271cf0fc75]
+2022-09-06T12:43:41.089529+00:00 app[web.1]: [e83993c6-179b-4736-bb4b-19271cf0fc75] app/views/layouts/application.html.erb:13
+2022-09-06T12:43:41.093544+00:00 heroku[router]: at=info method=GET path="/" host=cnearing27-askme.herokuapp.com request_id=e83993c6-179b-4736-bb4b-19271cf0fc75 fwd="93.81.206.209" dyno=web.1 connect=0ms service=18ms status=500 bytes=1827 protocol=https
+2022-09-06T12:43:41.260396+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=cnearing27-askme.herokuapp.com request_id=f316133d-71ba-4f8d-a4a5-e425928543eb fwd="93.81.206.209" dyno=web.1 connect=0ms service=1ms status=304 bytes=48 protocol=https
+2022-09-06T12:43:58.662310+00:00 app[api]: Starting process with command `bundle exec rake db:migrate` by user katerina4227@gmail.com
+2022-09-06T12:44:02.919506+00:00 heroku[run.3464]: State changed from starting to up
+2022-09-06T12:44:03.139938+00:00 heroku[run.3464]: Awaiting client
+2022-09-06T12:44:03.176377+00:00 heroku[run.3464]: Starting process with command `bundle exec rake db:migrate`
+2022-09-06T12:44:10.677230+00:00 heroku[run.3464]: Process exited with status 0
+2022-09-06T12:44:10.678397+00:00 heroku[run.3464]: Client connection closed. Sending SIGHUP to all processes
+2022-09-06T12:44:11.613180+00:00 heroku[run.3464]: State changed from up to complete
+2022-09-06T12:44:14.219656+00:00 app[web.1]: I, [2022-09-06T12:44:14.219571 #4]  INFO -- : [3bc7e896-66ee-4bc6-a24d-f4226dc54a66] Started GET "/" for 93.81.206.209 at 2022-09-06 12:44:14 +0000
+2022-09-06T12:44:14.220345+00:00 app[web.1]: I, [2022-09-06T12:44:14.220287 #4]  INFO -- : [3bc7e896-66ee-4bc6-a24d-f4226dc54a66] Processing by QuestionsController#index as HTML
+2022-09-06T12:44:14.226578+00:00 app[web.1]: I, [2022-09-06T12:44:14.226474 #4]  INFO -- : [3bc7e896-66ee-4bc6-a24d-f4226dc54a66]   Rendered questions/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 838)
+2022-09-06T12:44:14.229120+00:00 app[web.1]: I, [2022-09-06T12:44:14.229054 #4]  INFO -- : [3bc7e896-66ee-4bc6-a24d-f4226dc54a66]   Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 1842)
+2022-09-06T12:44:14.229315+00:00 app[web.1]: I, [2022-09-06T12:44:14.229278 #4]  INFO -- : [3bc7e896-66ee-4bc6-a24d-f4226dc54a66] Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.7ms | Allocations: 2041)
+2022-09-06T12:44:14.230359+00:00 app[web.1]: F, [2022-09-06T12:44:14.230289 #4] FATAL -- : [3bc7e896-66ee-4bc6-a24d-f4226dc54a66]
+2022-09-06T12:44:14.230360+00:00 app[web.1]: [3bc7e896-66ee-4bc6-a24d-f4226dc54a66] ActionView::Template::Error (undefined method `header_color' for nil:NilClass):
+2022-09-06T12:44:14.230361+00:00 app[web.1]: [3bc7e896-66ee-4bc6-a24d-f4226dc54a66]     10:     <%= javascript_importmap_tags %>
+2022-09-06T12:44:14.230362+00:00 app[web.1]: [3bc7e896-66ee-4bc6-a24d-f4226dc54a66]     11:
+2022-09-06T12:44:14.230363+00:00 app[web.1]: [3bc7e896-66ee-4bc6-a24d-f4226dc54a66]     12:     <style>
+2022-09-06T12:44:14.230363+00:00 app[web.1]: [3bc7e896-66ee-4bc6-a24d-f4226dc54a66]     13:       .navbar { background-color: <%= current_user.header_color %>; }
+2022-09-06T12:44:14.230364+00:00 app[web.1]: [3bc7e896-66ee-4bc6-a24d-f4226dc54a66]     14:     </style>
+2022-09-06T12:44:14.230364+00:00 app[web.1]: [3bc7e896-66ee-4bc6-a24d-f4226dc54a66]     15:   </head>
+2022-09-06T12:44:14.230364+00:00 app[web.1]: [3bc7e896-66ee-4bc6-a24d-f4226dc54a66]     16:
+2022-09-06T12:44:14.230365+00:00 app[web.1]: [3bc7e896-66ee-4bc6-a24d-f4226dc54a66]
+2022-09-06T12:44:14.230365+00:00 app[web.1]: [3bc7e896-66ee-4bc6-a24d-f4226dc54a66] app/views/layouts/application.html.erb:13
+2022-09-06T12:44:14.234678+00:00 heroku[router]: at=info method=GET path="/" host=cnearing27-askme.herokuapp.com request_id=3bc7e896-66ee-4bc6-a24d-f4226dc54a66 fwd="93.81.206.209" dyno=web.1 connect=0ms service=16ms status=500 bytes=1827 protocol=https
+2022-09-06T12:44:14.397459+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=cnearing27-askme.herokuapp.com request_id=e1b354bd-013b-4245-b28a-f5556bf8e71a fwd="93.81.206.209" dyno=web.1 connect=0ms service=1ms status=304 bytes=48 protocol=https
+2022-09-06T12:44:15.601460+00:00 app[web.1]: I, [2022-09-06T12:44:15.601390 #4]  INFO -- : [23d31324-2798-4a97-a662-6c6f0ea33f84] Started GET "/" for 93.81.206.209 at 2022-09-06 12:44:15 +0000
+2022-09-06T12:44:15.602206+00:00 app[web.1]: I, [2022-09-06T12:44:15.602148 #4]  INFO -- : [23d31324-2798-4a97-a662-6c6f0ea33f84] Processing by QuestionsController#index as HTML
+2022-09-06T12:44:15.608000+00:00 app[web.1]: I, [2022-09-06T12:44:15.607936 #4]  INFO -- : [23d31324-2798-4a97-a662-6c6f0ea33f84]   Rendered questions/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 846)
+2022-09-06T12:44:15.610474+00:00 app[web.1]: I, [2022-09-06T12:44:15.610419 #4]  INFO -- : [23d31324-2798-4a97-a662-6c6f0ea33f84]   Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 1851)
+2022-09-06T12:44:15.610677+00:00 app[web.1]: I, [2022-09-06T12:44:15.610639 #4]  INFO -- : [23d31324-2798-4a97-a662-6c6f0ea33f84] Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.5ms | Allocations: 2060)
+2022-09-06T12:44:15.611655+00:00 app[web.1]: F, [2022-09-06T12:44:15.611609 #4] FATAL -- : [23d31324-2798-4a97-a662-6c6f0ea33f84]
+2022-09-06T12:44:15.611655+00:00 app[web.1]: [23d31324-2798-4a97-a662-6c6f0ea33f84] ActionView::Template::Error (undefined method `header_color' for nil:NilClass):
+2022-09-06T12:44:15.611656+00:00 app[web.1]: [23d31324-2798-4a97-a662-6c6f0ea33f84]     10:     <%= javascript_importmap_tags %>
+2022-09-06T12:44:15.611656+00:00 app[web.1]: [23d31324-2798-4a97-a662-6c6f0ea33f84]     11:
+2022-09-06T12:44:15.611657+00:00 app[web.1]: [23d31324-2798-4a97-a662-6c6f0ea33f84]     12:     <style>
+2022-09-06T12:44:15.611657+00:00 app[web.1]: [23d31324-2798-4a97-a662-6c6f0ea33f84]     13:       .navbar { background-color: <%= current_user.header_color %>; }
+2022-09-06T12:44:15.611657+00:00 app[web.1]: [23d31324-2798-4a97-a662-6c6f0ea33f84]     14:     </style>
+2022-09-06T12:44:15.611657+00:00 app[web.1]: [23d31324-2798-4a97-a662-6c6f0ea33f84]     15:   </head>
+2022-09-06T12:44:15.611658+00:00 app[web.1]: [23d31324-2798-4a97-a662-6c6f0ea33f84]     16:
+2022-09-06T12:44:15.611658+00:00 app[web.1]: [23d31324-2798-4a97-a662-6c6f0ea33f84]
+2022-09-06T12:44:15.611658+00:00 app[web.1]: [23d31324-2798-4a97-a662-6c6f0ea33f84] app/views/layouts/application.html.erb:13
+2022-09-06T12:44:15.615604+00:00 heroku[router]: at=info method=GET path="/" host=cnearing27-askme.herokuapp.com request_id=23d31324-2798-4a97-a662-6c6f0ea33f84 fwd="93.81.206.209" dyno=web.1 connect=0ms service=12ms status=500 bytes=1827 protocol=https
+2022-09-06T12:44:41.493545+00:00 app[web.1]: I, [2022-09-06T12:44:41.493458 #4]  INFO -- : [760e8259-c814-4cc4-bb2e-3ffa52c51b25] Started GET "/" for 93.81.206.209 at 2022-09-06 12:44:41 +0000
+2022-09-06T12:44:41.494291+00:00 app[web.1]: I, [2022-09-06T12:44:41.494233 #4]  INFO -- : [760e8259-c814-4cc4-bb2e-3ffa52c51b25] Processing by QuestionsController#index as HTML
+2022-09-06T12:44:41.499916+00:00 app[web.1]: I, [2022-09-06T12:44:41.499861 #4]  INFO -- : [760e8259-c814-4cc4-bb2e-3ffa52c51b25]   Rendered questions/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 838)
+2022-09-06T12:44:41.502326+00:00 app[web.1]: I, [2022-09-06T12:44:41.502276 #4]  INFO -- : [760e8259-c814-4cc4-bb2e-3ffa52c51b25]   Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 1842)
+2022-09-06T12:44:41.502517+00:00 app[web.1]: I, [2022-09-06T12:44:41.502458 #4]  INFO -- : [760e8259-c814-4cc4-bb2e-3ffa52c51b25] Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.5ms | Allocations: 2041)
+2022-09-06T12:44:41.503567+00:00 app[web.1]: F, [2022-09-06T12:44:41.503525 #4] FATAL -- : [760e8259-c814-4cc4-bb2e-3ffa52c51b25]
+2022-09-06T12:44:41.503569+00:00 app[web.1]: [760e8259-c814-4cc4-bb2e-3ffa52c51b25] ActionView::Template::Error (undefined method `header_color' for nil:NilClass):
+2022-09-06T12:44:41.503569+00:00 app[web.1]: [760e8259-c814-4cc4-bb2e-3ffa52c51b25]     10:     <%= javascript_importmap_tags %>
+2022-09-06T12:44:41.503569+00:00 app[web.1]: [760e8259-c814-4cc4-bb2e-3ffa52c51b25]     11:
+2022-09-06T12:44:41.503570+00:00 app[web.1]: [760e8259-c814-4cc4-bb2e-3ffa52c51b25]     12:     <style>
+2022-09-06T12:44:41.503570+00:00 app[web.1]: [760e8259-c814-4cc4-bb2e-3ffa52c51b25]     13:       .navbar { background-color: <%= current_user.header_color %>; }
+2022-09-06T12:44:41.503571+00:00 app[web.1]: [760e8259-c814-4cc4-bb2e-3ffa52c51b25]     14:     </style>
+2022-09-06T12:44:41.503571+00:00 app[web.1]: [760e8259-c814-4cc4-bb2e-3ffa52c51b25]     15:   </head>
+2022-09-06T12:44:41.503571+00:00 app[web.1]: [760e8259-c814-4cc4-bb2e-3ffa52c51b25]     16:
+2022-09-06T12:44:41.503571+00:00 app[web.1]: [760e8259-c814-4cc4-bb2e-3ffa52c51b25]
+2022-09-06T12:44:41.503572+00:00 app[web.1]: [760e8259-c814-4cc4-bb2e-3ffa52c51b25] app/views/layouts/application.html.erb:13
+2022-09-06T12:44:41.507575+00:00 heroku[router]: at=info method=GET path="/" host=cnearing27-askme.herokuapp.com request_id=760e8259-c814-4cc4-bb2e-3ffa52c51b25 fwd="93.81.206.209" dyno=web.1 connect=0ms service=12ms status=500 bytes=1827 protocol=https
+2022-09-06T12:44:41.772844+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=cnearing27-askme.herokuapp.com request_id=43b6146d-921e-47cd-abbb-daabbaead5e2 fwd="93.81.206.209" dyno=web.1 connect=0ms service=1ms status=304 bytes=48 protocol=https
+2022-09-06T12:46:24.837360+00:00 app[api]: Starting process with command `bundle exec rails db:migrate` by user katerina4227@gmail.com
+2022-09-06T12:46:27.456607+00:00 heroku[run.5390]: Awaiting client
+2022-09-06T12:46:27.472236+00:00 heroku[run.5390]: Starting process with command `bundle exec rails db:migrate`
+2022-09-06T12:46:27.542116+00:00 heroku[run.5390]: State changed from starting to up
+2022-09-06T12:46:33.740254+00:00 heroku[run.5390]: Process exited with status 0
+2022-09-06T12:46:33.885969+00:00 heroku[run.5390]: State changed from up to complete
+2022-09-06T12:46:38.803772+00:00 app[web.1]: I, [2022-09-06T12:46:38.803701 #4]  INFO -- : [e29f5635-618c-4eeb-8ebe-d113f3ef9fef] Started GET "/" for 93.81.206.209 at 2022-09-06 12:46:38 +0000
+2022-09-06T12:46:38.804331+00:00 app[web.1]: I, [2022-09-06T12:46:38.804293 #4]  INFO -- : [e29f5635-618c-4eeb-8ebe-d113f3ef9fef] Processing by QuestionsController#index as HTML
+2022-09-06T12:46:38.809109+00:00 app[web.1]: I, [2022-09-06T12:46:38.809056 #4]  INFO -- : [e29f5635-618c-4eeb-8ebe-d113f3ef9fef]   Rendered questions/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 838)
+2022-09-06T12:46:38.810706+00:00 app[web.1]: I, [2022-09-06T12:46:38.810664 #4]  INFO -- : [e29f5635-618c-4eeb-8ebe-d113f3ef9fef]   Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 1842)
+2022-09-06T12:46:38.810841+00:00 app[web.1]: I, [2022-09-06T12:46:38.810799 #4]  INFO -- : [e29f5635-618c-4eeb-8ebe-d113f3ef9fef] Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.4ms | Allocations: 2041)
+2022-09-06T12:46:38.811464+00:00 app[web.1]: F, [2022-09-06T12:46:38.811423 #4] FATAL -- : [e29f5635-618c-4eeb-8ebe-d113f3ef9fef]
+2022-09-06T12:46:38.811465+00:00 app[web.1]: [e29f5635-618c-4eeb-8ebe-d113f3ef9fef] ActionView::Template::Error (undefined method `header_color' for nil:NilClass):
+2022-09-06T12:46:38.811466+00:00 app[web.1]: [e29f5635-618c-4eeb-8ebe-d113f3ef9fef]     10:     <%= javascript_importmap_tags %>
+2022-09-06T12:46:38.811467+00:00 app[web.1]: [e29f5635-618c-4eeb-8ebe-d113f3ef9fef]     11:
+2022-09-06T12:46:38.811468+00:00 app[web.1]: [e29f5635-618c-4eeb-8ebe-d113f3ef9fef]     12:     <style>
+2022-09-06T12:46:38.811468+00:00 app[web.1]: [e29f5635-618c-4eeb-8ebe-d113f3ef9fef]     13:       .navbar { background-color: <%= current_user.header_color %>; }
+2022-09-06T12:46:38.811468+00:00 app[web.1]: [e29f5635-618c-4eeb-8ebe-d113f3ef9fef]     14:     </style>
+2022-09-06T12:46:38.811469+00:00 app[web.1]: [e29f5635-618c-4eeb-8ebe-d113f3ef9fef]     15:   </head>
+2022-09-06T12:46:38.811469+00:00 app[web.1]: [e29f5635-618c-4eeb-8ebe-d113f3ef9fef]     16:
+2022-09-06T12:46:38.811469+00:00 app[web.1]: [e29f5635-618c-4eeb-8ebe-d113f3ef9fef]
+2022-09-06T12:46:38.811470+00:00 app[web.1]: [e29f5635-618c-4eeb-8ebe-d113f3ef9fef] app/views/layouts/application.html.erb:13
+2022-09-06T12:46:38.812861+00:00 heroku[router]: at=info method=GET path="/" host=cnearing27-askme.herokuapp.com request_id=e29f5635-618c-4eeb-8ebe-d113f3ef9fef fwd="93.81.206.209" dyno=web.1 connect=0ms service=9ms status=500 bytes=1827 protocol=https
+2022-09-06T12:46:39.081802+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=cnearing27-askme.herokuapp.com request_id=bb351ad8-b5d4-47e8-9e94-ac3f372ab22d fwd="93.81.206.209" dyno=web.1 connect=0ms service=6ms status=304 bytes=48 protocol=https

@@ -10,7 +10,14 @@
     <%= javascript_importmap_tags %>
 
     <style>
-      .navbar { background-color: <%= current_user.header_color %>; }
+      .navbar {
+        background-color:
+          <% if current_user.present? %>
+            <%= current_user.header_color %>
+          <% else %>
+            <%= "black" %>
+          <% end %>;
+        }
     </style>
   </head>
 
