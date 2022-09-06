@@ -8,9 +8,9 @@
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
 #
-# It's strongly recommended that you check this file into your version control system.
+# It"s strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_04_151856) do
+ActiveRecord::Schema.define(version: 2022_09_06_121450) do
 
   create_table "questions", force: :cascade do |t|
     t.text "body"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2022_09_04_151856) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
+    t.string "header_color", default: "black"
   end
 
 end
