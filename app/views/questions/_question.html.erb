@@ -7,7 +7,7 @@
 <% end %>
 
 <div class="mb-sm">
-  <%= question.body %>
+  <%= raw(question.body.gsub("\n", "<br>")) %>
   <p>user_id: <b><%= question.user_id %></b></p>
 </div>
 
