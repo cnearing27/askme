@@ -7,7 +7,7 @@
 <% end %>
 
 <div class="mb-sm">
-  <%= raw(question.body.gsub("\n", "<br>")) %>
+  <%= simple_format h(question.body) %>
   <% if question.answer.present? %>
     <div class="mb-sm text-dark-red">
       <%= question.answer %>
