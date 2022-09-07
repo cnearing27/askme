@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_07_121902) do
+ActiveRecord::Schema.define(version: 2022_09_07_124807) do
 
   create_table "questions", force: :cascade do |t|
     t.text "body"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2022_09_07_121902) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.string "header_color", default: "black"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["nickname"], name: "index_users_on_nickname", unique: true
   end
 
 end
