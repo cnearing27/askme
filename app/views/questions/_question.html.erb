@@ -8,7 +8,11 @@
 
 <div class="mb-sm">
   <%= raw(question.body.gsub("\n", "<br>")) %>
-  <p>user_id: <b><%= question.user_id %></b></p>
+  <% if question.answer.present? %>
+    <div class="mb-sm text-dark-red">
+      <%= question.answer %>
+    </div>
+  <% end %>
 </div>
 
 <div class="question-footer text-sm">
@@ -16,12 +20,16 @@
     <%= l(question.created_at, format: :short) %>
   </div>
 
-  <div>
-    <%= link_to fa_icon("pencil"), edit_question_path(question), title: "Изменить вопрос" %>
-    <%= button_to fa_icon("trash-o"), question_path(question), method: :delete, title: "Удалить вопрос",
-    form: { data: { turbo_confirm: "Точно удалить вопрос?" } } %>
-    <% unless question.hidden %>
-      <%= button_to fa_icon("eye-slash"), hide_question_path(question), method: :put, title: "Скрыть вопрос" %>
-    <% end %>
-  </div>
+  <% if question.user == current_user %>
+    <div>
+      <% edit_icon = question.answer.blank? ? "reply" : "pencil" %>
+      <% edit_title = question.answer.blank? ? "Ответить" : "Изменить вопрос" %>
+      <%= link_to fa_icon(edit_icon), edit_question_path(question), title: edit_title %>
+      <%= button_to fa_icon("trash-o"), question_path(question), method: :delete, title: "Удалить вопрос",
+      form: { data: { turbo_confirm: "Точно удалить вопрос?" } } %>
+      <% unless question.hidden %>
+        <%= button_to fa_icon("eye-slash"), hide_question_path(question), method: :put, title: "Скрыть вопрос" %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
