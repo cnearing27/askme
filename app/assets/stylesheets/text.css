@@ -41,6 +41,10 @@ button {
   font-weight: bold;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .hidden-q {
   opacity: 50%;
 }
