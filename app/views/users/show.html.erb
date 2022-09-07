@@ -17,10 +17,10 @@
   </p>
 </div>
 
-<%= @questions.count %>
 <% unless @questions.count == 0 %>
   <div class="container mt-sm">
     <h2 class="title-lg">
+        <%= @questions.count %>
         <%= inclination(@questions.count, "вопрос", "вопроса", "вопросов") %>
     </h2>
   </div>
@@ -33,7 +33,7 @@
 <% else %>
   <div class="container mt-sm">
     <h2 class="title-lg text-grey text-center">
-        У этого пользователя пока никто ничего не спросил &#9785;
+      У этого пользователя пока никто ничего не спросил &#9785;
     </h2>
   </div>
 <% end %>
