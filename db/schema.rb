@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_07_201352) do
+ActiveRecord::Schema.define(version: 2022_09_08_113500) do
 
   create_table "questions", force: :cascade do |t|
     t.text "body"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2022_09_07_201352) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
-    t.string "header_color", default: "black"
+    t.string "header_color", default: "#000000"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["nickname"], name: "index_users_on_nickname", unique: true
   end
