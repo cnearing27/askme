@@ -18,9 +18,11 @@
 <div class="question-footer text-sm">
   <div class="text-grey">
     <%= l(question.created_at, format: :short) %>
+    от
     <% if question.author.present? %>
-      от
       <%= link_to dogcase(question.author), user_path(question.author), class: "mr-sm" %>
+    <% else %>
+      анонимного пользователя &#128526;
     <% end %>
   </div>
 
