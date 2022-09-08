@@ -35,6 +35,11 @@
     <% end %>
   </div>
 
+  <div class="mt">
+    <p><%= image_tag @user.gravatar_url, title: dogcase(@user), class: 'rounded' %></p>
+    <p class="text-sm">Чтобы добавить или поменять аватар — зарегистрируйтесь на <%= link_to "Gravatar", 'https://gravatar.com' %> и загрузите фото</p>
+  </div>
+
   <div class="mt-lg">
     <%= button_to "Удалить профиль", user_path(@user),
       method: :delete,

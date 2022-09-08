@@ -3,6 +3,9 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  include Gravtastic
+  gravtastic(secure: true, filetype: :png, size: 100, default: "identicon")
+
   before_validation :downcase_nickname
 
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
