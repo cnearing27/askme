@@ -10,6 +10,8 @@
  *= require form
  *= require message
  *= require user
+ *= require avatar
+ *= require utils
  *
  *= require question
  */
