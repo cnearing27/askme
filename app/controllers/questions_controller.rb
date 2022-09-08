@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
     @question.author = current_user
 
     if @question.save
-      redirect_to user_path(@question.user), notice: "Новый вопрос создан"
+      redirect_to user_path(@question.user.nickname), notice: "Новый вопрос создан"
     else
       flash.now[:alert] = "Текст вопроса слишком длинный"
 
@@ -21,7 +21,7 @@ class QuestionsController < ApplicationController
     question_params = params.require(:question).permit(:body, :answer)
 
     if @question.update(question_params)
-      redirect_to user_path(@question.user), notice: "Вопрос обновлен"
+      redirect_to user_path(@question.user.nickname), notice: "Вопрос обновлен"
     else
       flash.now[:alert] = "Текст вопроса слишком длинный"
 
@@ -33,7 +33,7 @@ class QuestionsController < ApplicationController
     user = @question.user
     @question.destroy
 
-    redirect_to user_path(user), notice: "Вопрос удален"
+    redirect_to user_path(user.nickname), notice: "Вопрос удален"
   end
 
   def show
@@ -43,10 +43,11 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.order(created_at: :desc).last(10)
     @users = User.order(created_at: :desc).last(10)
+    @question = Question.new
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = User.find_by(nickname: params[:nickname])
     @question = Question.new(user: @user)
   end
 
