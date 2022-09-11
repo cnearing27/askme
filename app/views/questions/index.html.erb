@@ -22,7 +22,7 @@
   <div class="mt-sm container">
     <p class="mb text-sm text-grey <%= "hidden-q" if question.hidden %>">
       Вопрос <%= link_to "№#{question.id}", question_path(question) %>
-      для <%= link_to dogcase(question.user), user_path(question.user.nickname) %>
+      для <%= link_to dogcase(question.user), user_path(question.user) %>
       <%= render question %>
     </p>
   </div>
