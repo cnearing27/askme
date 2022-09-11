@@ -47,7 +47,13 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:id])
+    if params[:user_id].present?
+      user = User.find(params[:user_id])
+      redirect_to(user_nickname: user)
+      return
+    end
+
+    @user = User.find_by!(nickname: params[:user_nickname])
     @question = Question.new(user: @user)
   end
 
