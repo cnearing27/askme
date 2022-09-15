@@ -1,0 +1,15 @@
+<div class="container">
+  <h2 class="title-lg mb">
+    Вопросы с меткой <%= @hashtag.body %>
+  </h2>
+</div>
+
+<% @hashtag.questions.order(created_at: :desc).each do |question| %>
+  <div class="mt-sm container">
+    <p class="mb text-sm text-grey">
+      Вопрос <%= link_to "№#{question.id}", question_path(question) %>
+      для <%= link_to dogcase(question.user), user_path(question.user) %>
+      <%= render question %>
+    </p>
+  </div>
+<% end %>

@@ -10,6 +10,14 @@
   </div>
 </div>
 
+<% if @hashtags.any? %>
+  <div class="container mt-sm">
+    <h2 class="title-lg">Метки</h2>
+
+    <%= render partial: "hashtags/hashtags", locals: { hashtags: @hashtags } %>
+  </div>
+<% end %>
+
 <div class="container mt-sm">
   <h2 class="title-lg">
     <%= inclination(@questions.count, "Последний", "Последние", "Последние") %>

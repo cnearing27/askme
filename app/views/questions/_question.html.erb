@@ -24,6 +24,10 @@
     <% else %>
       анонимного пользователя &#128526;
     <% end %>
+
+    <% if question.hashtags.any? %>
+      <%= render partial: "hashtags/hashtags", locals: { hashtags: question.hashtags } %>
+    <% end %>
   </div>
 
   <% if question.user == current_user %>
