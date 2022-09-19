@@ -5,13 +5,6 @@ class HashtagsController < ApplicationController
     @hashtags = Hashtag.all
   end
 
-  def show
-  end
-
-  def new
-    @hashtag = Hashtag.new
-  end
-
   def create
     @hashtag = Hashtag.new(hashtag_params)
     @hashtag.save

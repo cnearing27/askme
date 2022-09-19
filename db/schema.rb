@@ -10,19 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_15_213026) do
+ActiveRecord::Schema.define(version: 2022_09_16_183257) do
+
+  create_table "hashtag_questions", force: :cascade do |t|
+    t.integer "hashtag_id", null: false
+    t.integer "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hashtag_id", "question_id"], name: "index_hashtag_questions_on_hashtag_id_and_question_id", unique: true
+    t.index ["hashtag_id"], name: "index_hashtag_questions_on_hashtag_id"
+    t.index ["question_id"], name: "index_hashtag_questions_on_question_id"
+  end
 
   create_table "hashtags", force: :cascade do |t|
     t.string "body", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "hashtags_questions", id: false, force: :cascade do |t|
-    t.integer "hashtag_id", null: false
-    t.integer "question_id", null: false
-    t.index ["hashtag_id", "question_id"], name: "index_hashtags_questions_on_hashtag_id_and_question_id"
-    t.index ["question_id", "hashtag_id"], name: "index_hashtags_questions_on_question_id_and_hashtag_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -49,5 +52,7 @@ ActiveRecord::Schema.define(version: 2022_09_15_213026) do
     t.index ["nickname"], name: "index_users_on_nickname", unique: true
   end
 
+  add_foreign_key "hashtag_questions", "hashtags"
+  add_foreign_key "hashtag_questions", "questions"
   add_foreign_key "questions", "users", column: "author_id"
 end
