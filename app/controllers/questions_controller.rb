@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     @question.author = current_user
 
-    if @question.save
+    if check_captcha(@question) && @question.save
       redirect_to user_path(@question.user), notice: "Новый вопрос создан"
     else
       flash.now[:alert] = "Текст вопроса слишком длинный"
@@ -75,5 +75,9 @@ class QuestionsController < ApplicationController
 
   def ensure_current_user
     redirect_with_alert unless current_user.present?
+  end
+
+  def check_captcha(model)
+    current_user.present? || verify_recaptcha(model: model)
   end
 end
