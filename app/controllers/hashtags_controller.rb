@@ -13,7 +13,7 @@ class HashtagsController < ApplicationController
   private
 
   def set_hashtag
-    @hashtag = Hashtag.find_by!(body: params[:body])
+    @hashtag = Hashtag.find_by!(body: "##{params[:tag]}")
   end
 
   def hashtag_params

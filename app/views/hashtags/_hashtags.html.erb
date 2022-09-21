@@ -1,6 +1,6 @@
 <p>
   <% hashtags.each do |hashtag| %>
-    <%= link_to hashtag.body, hashtag_path(hashtag.body) %>
+    <%= link_to hashtag.body, hashtag_path(hashtag.body.delete("#")) %>
     <%= ", " unless hashtag == hashtags.last %>
   <% end %>
 </p>
