@@ -15,7 +15,7 @@ class Question < ApplicationRecord
   def update_hashtags
     self.hashtags =
       "#{body} #{answer}".downcase.scan(Hashtag::REGEXP).uniq.
-      map { |tag| Hashtag.find_or_create_by(body: tag) }
+        map { |tag| Hashtag.create_or_find_by!(body: tag) }
   end
 
 #  def clear_hashtags

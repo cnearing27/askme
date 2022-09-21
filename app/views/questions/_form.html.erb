@@ -8,7 +8,7 @@
     <p><%= form.text_area :answer, rows: 5, class: "form-text-area" %></p>
   <% end %>
 
-  <%= recaptcha_tags unless current_user.present? %>
+  <!-- <%= recaptcha_tags unless current_user.present? %> -->
 
   <p class="mt">
     <%= form.submit "Сохранить", class: "button button-main" %>
