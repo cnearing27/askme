@@ -16,12 +16,6 @@ class Question < ApplicationRecord
       "#{body} #{answer}".downcase.scan(Hashtag::REGEXP).uniq.
         map { |tag| Hashtag.create_or_find_by!(body: tag) }
 
-    clear_hashtags
-  end
-
-  def clear_hashtags
-    Hashtag.all.each do |tag|
-      tag.destroy if tag.questions.empty?
-    end
+    Hashtag.where("hashtags.id NOT IN (SELECT hashtag_id FROM hashtag_questions)").destroy_all
   end
 end
