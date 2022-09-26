@@ -15,7 +15,5 @@ class Question < ApplicationRecord
     self.hashtags =
       "#{body} #{answer}".downcase.scan(Hashtag::REGEXP).uniq.
         map { |tag| Hashtag.create_or_find_by!(body: tag) }
-
-    Hashtag.where.missing(:hashtag_questions).destroy_all
   end
 end

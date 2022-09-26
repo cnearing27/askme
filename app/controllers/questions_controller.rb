@@ -45,7 +45,7 @@ class QuestionsController < ApplicationController
     @questions = Question.order(created_at: :desc).last(10)
     @users = User.order(created_at: :desc).last(10)
     @question = Question.new
-    @hashtags = Hashtag.all
+    @hashtags = Hashtag.with_questions
   end
 
   def new

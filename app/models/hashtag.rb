@@ -8,6 +8,8 @@ class Hashtag < ApplicationRecord
 
   validates :body, presence: true, format: { with: /\A#{REGEXP}\z/ }
 
+  scope :with_questions, -> { where_exists(:hashtag_questions) }
+
   private
 
   def downcase_body

@@ -1,10 +1,6 @@
 class HashtagsController < ApplicationController
   before_action :set_hashtag, only: %i[ show ]
 
-  def index
-    @hashtags = Hashtag.all
-  end
-
   def create
     @hashtag = Hashtag.new(hashtag_params)
     @hashtag.save
@@ -13,7 +9,7 @@ class HashtagsController < ApplicationController
   private
 
   def set_hashtag
-    @hashtag = Hashtag.find_by!(body: "##{params[:tag]}")
+    @hashtag = Hashtag.with_questions.find_by!(body: "##{params[:tag]}")
   end
 
   def hashtag_params
