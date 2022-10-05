@@ -6,16 +6,6 @@ Ruby on Rails приложение "Askme".
 
 Развернутое приложение на [heroku](https://cnearing27-askme.herokuapp.com/)
 
-## Установка и настройка
-
-Склонируйте репозиторий:
-
-    git@github.com:cnearing27/askme.git
-
-Перейдите в корень проекта
-
-    cd askme
-
 ## Предварительные требования
 
 ```
@@ -28,6 +18,14 @@ Rails 7.0.4
     gem install bundler
 
 ## Локальная установка
+
+Склонируйте репозиторий:
+
+    git@github.com:cnearing27/askme.git
+
+Перейдите в корень проекта
+
+    cd askme
 
 Установите необходимые гемы
 
